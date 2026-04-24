@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Che personaggio sei nell'Impero?</title>
+  <title>Marketing digitale: che Gallo sei?</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #F5F5F5;
+      background: #F0F0F5;
       font-family: 'Nunito', sans-serif;
       min-height: 100vh;
       display: flex;
@@ -25,17 +25,18 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      margin: 0 auto;
     }
 
     /* HERO */
     .hero {
       background: #fff;
-      padding: 2rem 1.5rem 1.5rem;
+      padding: 2rem 1.5rem 1.25rem;
       border-bottom: 2px solid #f0f0f0;
       text-align: center;
     }
     .hero-illo {
-      font-size: 56px;
+      font-size: 52px;
       line-height: 1;
       margin-bottom: .6rem;
       display: block;
@@ -46,7 +47,7 @@
       50%      { transform: rotate(4deg); }
     }
     .hero-title {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 900;
       color: #1a1a2e;
       line-height: 1.2;
@@ -116,10 +117,10 @@
       border: 1.5px solid #EBEBFF;
     }
     .q-text {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       color: #1a1a2e;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     .field-lbl {
@@ -166,6 +167,7 @@
       align-items: center;
       gap: 10px;
       transition: all .15s;
+      line-height: 1.35;
     }
     .opt:hover { background: #FFF3DC; border-color: #F4A225; }
     .opt.sel {
@@ -223,6 +225,43 @@
     .step { display: none; }
     .step.active { display: block; }
 
+    /* NAV BUTTONS */
+    .nav-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 1.25rem;
+    }
+    .btn-back {
+      flex: 0 0 auto;
+      background: #f5f5f5;
+      border: none;
+      border-radius: 12px;
+      padding: .9rem 1.1rem;
+      font-size: 15px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #888;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .btn-back:hover { background: #eee; }
+    .btn-next {
+      flex: 1;
+      background: #1a1a2e;
+      border: none;
+      border-radius: 12px;
+      padding: .9rem;
+      font-size: 15px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      color: #fff;
+      cursor: pointer;
+      transition: all .18s;
+    }
+    .btn-next:hover { background: #2d2d4e; transform: translateY(-1px); }
+    .btn-next:active { transform: scale(.98); }
+    .btn-next:disabled { opacity: .3; cursor: not-allowed; transform: none; }
+
     /* LOADING */
     .spin-wrap {
       text-align: center;
@@ -254,12 +293,12 @@
     /* RESULT */
     .rcard {
       padding: 1.5rem;
-      text-align: center;
       display: none;
     }
     .r-char {
-      font-size: 80px;
+      font-size: 72px;
       display: block;
+      text-align: center;
       animation: float 2.5s ease-in-out infinite;
     }
     @keyframes float {
@@ -267,7 +306,8 @@
       50%      { transform: translateY(-10px); }
     }
     .r-badge {
-      display: inline-block;
+      display: block;
+      text-align: center;
       background: #F7F7FF;
       border: 1.5px solid #EBEBFF;
       border-radius: 999px;
@@ -277,20 +317,31 @@
       color: #6B6BCC;
       letter-spacing: .08em;
       text-transform: uppercase;
-      margin: .75rem 0 .25rem;
+      margin: .75rem auto .25rem;
+      width: fit-content;
     }
     .r-name {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 900;
       color: #1a1a2e;
       margin-bottom: .2rem;
+      text-align: center;
     }
     .r-tagline {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: #F4A225;
-      margin-bottom: 1rem;
+      margin-bottom: .75rem;
       font-style: italic;
+      text-align: center;
+    }
+    .r-score {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #bbb;
+      margin-bottom: 1rem;
+      letter-spacing: .04em;
     }
     .r-divider {
       display: flex;
@@ -298,52 +349,68 @@
       gap: 8px;
       margin: .85rem 0;
     }
-    .r-divider-line {
-      flex: 1;
-      height: 1.5px;
-      background: #f0f0f0;
-    }
-    .r-dot {
-      width: 10px; height: 10px;
-      background: #F4A225;
-      border-radius: 50%;
+    .r-divider-line { flex: 1; height: 1.5px; background: #f0f0f0; }
+    .r-dot { width: 10px; height: 10px; background: #F4A225; border-radius: 50%; }
+
+    .r-section-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: .5rem;
     }
     .r-desc {
       font-size: 14px;
       font-weight: 600;
       color: #555;
       line-height: 1.65;
-      margin-bottom: 1.25rem;
-      text-align: left;
+      margin-bottom: 1rem;
       background: #FAFAFA;
       border-radius: 12px;
       padding: 1rem;
     }
-    .r-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: center;
-      margin-bottom: 1.5rem;
+    .r-list {
+      list-style: none;
+      margin-bottom: 1rem;
     }
-    .r-tag {
-      border-radius: 999px;
-      padding: 5px 14px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .t1 { background: #FFF3DC; color: #C47F0A; }
-    .t2 { background: #F0F0FF; color: #5555BB; }
-    .t3 { background: #FFEAEA; color: #CC4444; }
-
-    /* success / error save message */
-    .save-msg {
-      font-size: 12px;
+    .r-list li {
+      font-size: 13px;
       font-weight: 700;
-      color: #aaa;
-      margin-top: .5rem;
-      display: none;
+      color: #444;
+      padding: .35rem 0;
+      border-bottom: 1px solid #f5f5f5;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+    .r-list li::before {
+      content: '•';
+      color: #F4A225;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .r-manifesto {
+      background: #FFF3DC;
+      border-radius: 12px;
+      padding: .85rem 1rem;
+      font-size: 14px;
+      font-weight: 800;
+      color: #C47F0A;
+      font-style: italic;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .r-next {
+      background: #F7F7FF;
+      border-radius: 12px;
+      padding: .85rem 1rem;
+      font-size: 13px;
+      font-weight: 700;
+      color: #5555BB;
+      line-height: 1.5;
+    }
+    .r-next strong { display: block; margin-bottom: .2rem; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
   </style>
 </head>
 <body>
@@ -351,159 +418,381 @@
 
   <!-- HERO -->
   <div class="hero">
-    <span class="hero-illo">🏛️</span>
-    <div class="hero-title">Che personaggio sei<br><span>nell'Impero?</span></div>
-    <div class="hero-sub">2 domande · scopri il tuo alter ego</div>
+    <span class="hero-illo">⚔️</span>
+    <div class="hero-title">Marketing digitale:<br><span>che Gallo sei?</span></div>
+    <div class="hero-sub">10 domande · scopri il tuo profilo</div>
   </div>
 
   <!-- PROGRESS -->
   <div class="prog-area">
     <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf" style="width:0%"></div></div>
-      <div class="prog-num" id="pl">0 / 2</div>
+      <div class="prog-num" id="pl">0 / 10</div>
     </div>
   </div>
 
-  <!-- QUIZ CARD -->
+  <!-- QUIZ -->
   <div class="qcard" id="qcard">
 
-    <!-- Step 1: Email -->
+    <!-- Q1: Email -->
     <div class="step active" id="s1">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 1 di 2</div>
-      <div class="speech">
-        <div class="q-text">Come ti troviamo dopo la fiera? 📬</div>
-      </div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 1 di 10</div>
+      <div class="speech"><div class="q-text">Come ti troviamo dopo la fiera? 📬</div></div>
       <label class="field-lbl" for="em">La tua email</label>
       <input class="q-input" type="email" id="em" placeholder="nome@azienda.com" autocomplete="email"/>
       <div class="err" id="em-err">Inserisci un'email valida!</div>
-      <button class="btn-main" onclick="go2()">Continua →</button>
+      <button class="btn-main" onclick="goStep(2)">Continua →</button>
     </div>
 
-    <!-- Step 2: Ruolo -->
+    <!-- Q2: Ruolo -->
     <div class="step" id="s2">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 2 di 2</div>
-      <div class="speech">
-        <div class="q-text">Che ruolo hai in azienda? 🏢</div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 2 di 10</div>
+      <div class="speech"><div class="q-text">Che ruolo hai in azienda? 🏢</div></div>
+      <div class="opts" id="opts2">
+        <button class="opt" onclick="pickRole(this,'CEO / Founder')"><span class="odot"><span class="odi"></span></span>CEO / Founder</button>
+        <button class="opt" onclick="pickRole(this,'Marketing & Comunicazione')"><span class="odot"><span class="odi"></span></span>Marketing & Comunicazione</button>
+        <button class="opt" onclick="pickRole(this,'Sales & Business Dev')"><span class="odot"><span class="odi"></span></span>Sales & Business Dev</button>
+        <button class="opt" onclick="pickRole(this,'Operations & Finance')"><span class="odot"><span class="odi"></span></span>Operations & Finance</button>
+        <button class="opt" onclick="pickRole(this,'Tech & Prodotto')"><span class="odot"><span class="odi"></span></span>Tech & Prodotto</button>
+        <button class="opt" onclick="pickRole(this,'Altro')"><span class="odot"><span class="odi"></span></span>Altro</button>
       </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(1)">←</button>
+        <button class="btn-next" id="btn2" onclick="goStep(3)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q3: Tag gateway -->
+    <div class="step" id="s3">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 3 di 10</div>
+      <div class="speech"><div class="q-text">Sai cosa è un tag gateway? 🏷️</div></div>
       <div class="opts">
-        <button class="opt" onclick="pick(this,'CEO / Founder')"><span class="odot"><span class="odi"></span></span>CEO / Founder</button>
-        <button class="opt" onclick="pick(this,'Marketing & Comunicazione')"><span class="odot"><span class="odi"></span></span>Marketing & Comunicazione</button>
-        <button class="opt" onclick="pick(this,'Sales & Business Dev')"><span class="odot"><span class="odi"></span></span>Sales & Business Dev</button>
-        <button class="opt" onclick="pick(this,'Operations & Finance')"><span class="odot"><span class="odi"></span></span>Operations & Finance</button>
-        <button class="opt" onclick="pick(this,'Tech & Prodotto')"><span class="odot"><span class="odi"></span></span>Tech & Prodotto</button>
-        <button class="opt" onclick="pick(this,'Altro')"><span class="odot"><span class="odi"></span></span>Altro</button>
+        <button class="opt" onclick="pickScore(this,3,0)"><span class="odot"><span class="odi"></span></span>❌ Non so cosa sia un tag gateway</button>
+        <button class="opt" onclick="pickScore(this,3,4)"><span class="odot"><span class="odi"></span></span>✅ So cos'è ma non lo uso</button>
+        <button class="opt" onclick="pickScore(this,3,7)"><span class="odot"><span class="odi"></span></span>✅ Lo uso per alcuni flussi</button>
+        <button class="opt" onclick="pickScore(this,3,10)"><span class="odot"><span class="odi"></span></span>✅ Gestione server-side con controllo totale</button>
       </div>
-      <button class="btn-main" id="sub" onclick="submitQ()" disabled>Scopri chi sei →</button>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(2)">←</button>
+        <button class="btn-next" id="btn3" onclick="goStep(4)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q4: Cookie -->
+    <div class="step" id="s4">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 4 di 10</div>
+      <div class="speech"><div class="q-text">Ogni quanto scansioni i cookie del tuo sito? 🍪</div></div>
+      <div class="opts">
+        <button class="opt" onclick="pickScore(this,4,0)"><span class="odot"><span class="odi"></span></span>Mai</button>
+        <button class="opt" onclick="pickScore(this,4,2)"><span class="odot"><span class="odi"></span></span>Solo quando "qualcosa non va"</button>
+        <button class="opt" onclick="pickScore(this,4,5)"><span class="odot"><span class="odi"></span></span>Periodicamente (trimestrale/mensile)</button>
+        <button class="opt" onclick="pickScore(this,4,10)"><span class="odot"><span class="odi"></span></span>Automaticamente o su base continua</button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(3)">←</button>
+        <button class="btn-next" id="btn4" onclick="goStep(5)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q5: First Party Data -->
+    <div class="step" id="s5">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 5 di 10</div>
+      <div class="speech"><div class="q-text">Quanto impatta l'assenza di una strategia First-Party Data sui tuoi dati? 📊</div></div>
+      <div class="opts">
+        <button class="opt" onclick="pickScore(this,5,0)"><span class="odot"><span class="odi"></span></span>Cos'è il first party?</button>
+        <button class="opt" onclick="pickScore(this,5,4)"><span class="odot"><span class="odi"></span></span>Non lo so</button>
+        <button class="opt" onclick="pickScore(this,5,7)"><span class="odot"><span class="odi"></span></span>Poco (≈10%)</button>
+        <button class="opt" onclick="pickScore(this,5,10)"><span class="odot"><span class="odi"></span></span>Molto (≈30%)</button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(4)">←</button>
+        <button class="btn-next" id="btn5" onclick="goStep(6)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q6: Personalizzazione -->
+    <div class="step" id="s6">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 6 di 10</div>
+      <div class="speech"><div class="q-text">Personalizzi i contenuti web in base al tipo di utente? 🎯</div></div>
+      <div class="opts">
+        <button class="opt" onclick="pickScore(this,6,0)"><span class="odot"><span class="odi"></span></span>Nessuna personalizzazione</button>
+        <button class="opt" onclick="pickScore(this,6,3)"><span class="odot"><span class="odi"></span></span>Basata solo su device o lingua</button>
+        <button class="opt" onclick="pickScore(this,6,7)"><span class="odot"><span class="odi"></span></span>Basata su comportamento/CRM</button>
+        <button class="opt" onclick="pickScore(this,6,10)"><span class="odot"><span class="odi"></span></span>Personalizzazione real-time e omnicanale</button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(5)">←</button>
+        <button class="btn-next" id="btn6" onclick="goStep(7)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q7: Carrello abbandonato -->
+    <div class="step" id="s7">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 7 di 10</div>
+      <div class="speech"><div class="q-text">Cosa succede al carrello abbandonato? 🛒</div></div>
+      <div class="opts">
+        <button class="opt" onclick="pickScore(this,7,0)"><span class="odot"><span class="odi"></span></span>Fa le ragnatele 🕸️</button>
+        <button class="opt" onclick="pickScore(this,7,4)"><span class="odot"><span class="odi"></span></span>Email di reminder</button>
+        <button class="opt" onclick="pickScore(this,7,8)"><span class="odot"><span class="odi"></span></span>Flussi multicanale (ads, email...)</button>
+        <button class="opt" onclick="pickScore(this,7,10)"><span class="odot"><span class="odi"></span></span>Strategie personalizzate</button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(6)">←</button>
+        <button class="btn-next" id="btn7" onclick="goStep(8)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q8: Decisioni -->
+    <div class="step" id="s8">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 8 di 10</div>
+      <div class="speech"><div class="q-text">Le tue decisioni di marketing si basano su… 🧠</div></div>
+      <div class="opts">
+        <button class="opt" onclick="pickScore(this,8,0)"><span class="odot"><span class="odi"></span></span>Istinto</button>
+        <button class="opt" onclick="pickScore(this,8,4)"><span class="odot"><span class="odi"></span></span>Report sporadici</button>
+        <button class="opt" onclick="pickScore(this,8,7)"><span class="odot"><span class="odi"></span></span>KPI chiari e dashboard</button>
+        <button class="opt" onclick="pickScore(this,8,10)"><span class="odot"><span class="odi"></span></span>Test, esperimenti e modelli avanzati</button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(7)">←</button>
+        <button class="btn-next" id="btn8" onclick="goStep(9)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q9: Post-cookie -->
+    <div class="step" id="s9">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 9 di 10</div>
+      <div class="speech"><div class="q-text">Come affronti il mondo post-cookie? 🍪</div></div>
+      <div class="opts">
+        <button class="opt" onclick="pickScore(this,9,0)"><span class="odot"><span class="odi"></span></span>Fingo che non esista</button>
+        <button class="opt" onclick="pickScore(this,9,4)"><span class="odot"><span class="odi"></span></span>Sto valutando alternative</button>
+        <button class="opt" onclick="pickScore(this,9,10)"><span class="odot"><span class="odi"></span></span>First-party, server-side 🚀</button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(8)">←</button>
+        <button class="btn-next" id="btn9" onclick="goStep(10)" disabled>Continua →</button>
+      </div>
+    </div>
+
+    <!-- Q10: Pozione segreta -->
+    <div class="step" id="s10">
+      <div class="step-pill"><div class="step-dot"></div>Domanda 10 di 10</div>
+      <div class="speech"><div class="q-text">La tua pozione segreta nel marketing è… 🧪</div></div>
+      <div class="opts">
+        <button class="opt" onclick="pickScore(this,10,0)"><span class="odot"><span class="odi"></span></span>Fortuna 🍀</button>
+        <button class="opt" onclick="pickScore(this,10,4)"><span class="odot"><span class="odi"></span></span>Esperienza</button>
+        <button class="opt" onclick="pickScore(this,10,8)"><span class="odot"><span class="odi"></span></span>Dati + strategia</button>
+        <button class="opt" onclick="pickScore(this,10,10)"><span class="odot"><span class="odi"></span></span>First-party data ben governati</button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(9)">←</button>
+        <button class="btn-next" id="btn10" onclick="submitQ()" disabled>Scopri chi sei →</button>
+      </div>
     </div>
 
     <!-- Loading -->
     <div class="spin-wrap" id="sw">
       <span class="cauldron">🪄</span>
-      <div class="spin-txt">Il verdetto è in arrivo...</div>
-      <div class="spin-sub">Panoramix sta mescolando la pozione</div>
+      <div class="spin-txt">La pozione è in preparazione...</div>
+      <div class="spin-sub">Panoramix sta analizzando i tuoi dati</div>
     </div>
 
   </div>
 
   <!-- RESULT -->
   <div class="rcard" id="rc">
-    <span class="r-char">⚔️</span>
+    <span class="r-char" id="r-char">⚔️</span>
     <div class="r-badge">Il tuo profilo è</div>
-    <div class="r-name">Asterix</div>
-    <div class="r-tagline">"Per Toutatis, che talento!"</div>
-    <div class="r-divider">
-      <div class="r-divider-line"></div>
-      <div class="r-dot"></div>
-      <div class="r-divider-line"></div>
+    <div class="r-name" id="r-name">—</div>
+    <div class="r-tagline" id="r-tagline">—</div>
+    <div class="r-score" id="r-score"></div>
+
+    <div class="r-divider"><div class="r-divider-line"></div><div class="r-dot"></div><div class="r-divider-line"></div></div>
+
+    <div class="r-section-title">Chi sei</div>
+    <div class="r-desc" id="r-desc">—</div>
+
+    <div class="r-section-title">Come lavori</div>
+    <ul class="r-list" id="r-list"></ul>
+
+    <div class="r-manifesto" id="r-manifesto">—</div>
+
+    <div class="r-next">
+      <strong>🚀 Prossimo step</strong>
+      <span id="r-next">—</span>
     </div>
-    <div class="r-desc">
-      Sei piccolo ma inarrestabile — proprio come Asterix dopo la pozione magica.
-      Affronti ogni sfida con coraggio, intelligenza e un pizzico di ironia.
-      Nemmeno l'intero esercito romano riesce a fermarti!
-    </div>
-    <div class="r-tags">
-      <span class="r-tag t1">⚡ Visionario</span>
-      <span class="r-tag t2">🛡️ Stratega</span>
-      <span class="r-tag t3">💪 Inarrestabile</span>
-    </div>
-    <div class="save-msg" id="save-msg">✓ Risposta salvata</div>
   </div>
 
 </div>
 
 <script>
   // ─────────────────────────────────────────────
-  // CONFIGURAZIONE — incolla qui il tuo URL Apps Script
+  // CONFIGURAZIONE — incolla il tuo URL Apps Script
   // ─────────────────────────────────────────────
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/IL_TUO_URL_QUI/exec';
 
+  const TOTAL = 10;
   let userEmail = '';
   let userRole  = '';
+  let scores    = {}; // { stepNum: punteggio }
 
-  function upProg(s) {
-    document.getElementById('pf').style.width = (s / 2 * 100) + '%';
-    document.getElementById('pl').textContent = s + ' / 2';
-  }
-
-  function go2() {
-    const v  = document.getElementById('em').value.trim();
-    const er = document.getElementById('em-err');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
-      er.style.display = 'block';
-      return;
+  // ─── PROFILI ───────────────────────────────────
+  const profiles = [
+    {
+      min: 0, max: 20,
+      char: '🏛️', name: 'Romano Smarrito',
+      tagline: '"Funzionava anche prima…"',
+      desc: 'Il digital marketing intorno a te sembra l\'esercito romano: rumoroso, confuso e un po\' minaccioso. Ti affidi all\'istinto e speri che gli dei siano dalla tua parte.',
+      list: ['Poco o nessun controllo sui dati', 'Tracking minimo o inesistente', 'Zero personalizzazione', 'Fortuna come strategia'],
+      manifesto: '"Funzionava anche prima…"',
+      next: 'Capire cosa sta succedendo davvero sul tuo sito. Senza dati, nessuna pozione fa effetto.'
+    },
+    {
+      min: 21, max: 40,
+      char: '👑', name: 'Abraracourcix',
+      tagline: '"Mi fido del mio team… più o meno."',
+      desc: 'Hai autorità, esperienza e decisionalità, ma spesso vieni sollevato sullo scudo senza sapere esattamente perché le cose funzionano.',
+      list: ['Strumenti presenti ma non governati', 'Report sporadici', 'Personalizzazione base', 'GDPR = "qualcosa da spuntare"'],
+      manifesto: '"Mi fido del mio team… più o meno."',
+      next: 'Trasformare l\'esperienza in processi e KPI chiari.'
+    },
+    {
+      min: 41, max: 60,
+      char: '⚔️', name: 'Asterix Stratega',
+      tagline: '"Datemi i dati giusti e vi vinco la battaglia."',
+      desc: 'Piccolo ma temibile. Sai orientarti tra dati, strumenti e decisioni. Non sei il più forte, ma usi la testa meglio degli altri.',
+      list: ['KPI e dashboard', 'Prime strategie first-party', 'Recupero carrello attivo', 'Buona personalizzazione'],
+      manifesto: '"Datemi i dati giusti e vi vinco la battaglia."',
+      next: 'Fare un salto di maturità tecnica: automazioni, server-side, controllo totale.'
+    },
+    {
+      min: 61, max: 75,
+      char: '🪨', name: 'Obelix Data-Driven',
+      tagline: '"È semplice. Lo vedo dai dati."',
+      desc: 'Sei caduto nel calderone dei dati da piccolo. Le decisioni le prendi su basi solide e rompi i silos senza accorgertene.',
+      list: ['First-party data attivi', 'Personalizzazione avanzata', 'Flussi multicanale', 'Visione post-cookie chiara'],
+      manifesto: '"È semplice. Lo vedo dai dati."',
+      next: 'Rendere tutto scalabile e sostenibile, senza perdere controllo.'
+    },
+    {
+      min: 76, max: 90,
+      char: '🧙', name: 'Panoramix — Maestro della Pozione Digitale',
+      tagline: '"La pozione funziona solo se conosci ogni ingrediente."',
+      desc: 'Il saggio del villaggio. Governi dati, consenso e tecnologia con equilibrio. Sai che la vera forza è la governance.',
+      list: ['Server-side & tag gateway', 'First-party data ben governati', 'Personalizzazione real-time', 'Test ed esperimenti continui'],
+      manifesto: '"La pozione funziona solo se conosci ogni ingrediente."',
+      next: 'Condividere il metodo e guidare altri verso la maturità digitale.'
     }
-    er.style.display = 'none';
-    userEmail = v;
-    document.getElementById('s1').classList.remove('active');
-    document.getElementById('s2').classList.add('active');
-    upProg(1);
+  ];
+
+  // ─── PROGRESS ─────────────────────────────────
+  function upProg(step) {
+    document.getElementById('pf').style.width = ((step - 1) / TOTAL * 100) + '%';
+    document.getElementById('pl').textContent = (step - 1) + ' / ' + TOTAL;
   }
 
-  function pick(b, r) {
-    userRole = r;
-    document.querySelectorAll('.opt').forEach(x => x.classList.remove('sel'));
-    b.classList.add('sel');
-    document.getElementById('sub').disabled = false;
+  // ─── NAVIGATION ───────────────────────────────
+  function goStep(n) {
+    // Validate step 1
+    if (n === 2) {
+      const v  = document.getElementById('em').value.trim();
+      const er = document.getElementById('em-err');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { er.style.display = 'block'; return; }
+      er.style.display = 'none';
+      userEmail = v;
+    }
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('s' + n).classList.add('active');
+    upProg(n);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // ─── ROLE PICK ────────────────────────────────
+  function pickRole(btn, role) {
+    userRole = role;
+    document.querySelectorAll('#opts2 .opt').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+    document.getElementById('btn2').disabled = false;
+  }
+
+  // ─── SCORE PICK ───────────────────────────────
+  function pickScore(btn, stepNum, pts) {
+    scores[stepNum] = pts;
+    const stepEl = document.getElementById('s' + stepNum);
+    stepEl.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+    const nextBtn = document.getElementById('btn' + stepNum);
+    if (nextBtn) nextBtn.disabled = false;
+  }
+
+  // ─── SUBMIT ───────────────────────────────────
   function submitQ() {
-    document.getElementById('s2').style.display = 'none';
-    document.getElementById('sw').style.display = 'block';
-    upProg(2);
+    document.getElementById('s10').style.display = 'none';
+    document.getElementById('sw').style.display  = 'block';
+    upProg(10);
 
-    // Salva su Google Sheets
-    saveToSheets(userEmail, userRole, 'Asterix');
+    const total = Object.values(scores).reduce((a, b) => a + b, 0);
+    const profile = profiles.find(p => total >= p.min && total <= p.max) || profiles[0];
+
+    saveData(userEmail, userRole, scores, total, profile.name);
 
     setTimeout(() => {
-      document.getElementById('qcard').style.display = 'none';
-      document.getElementById('rc').style.display = 'block';
-    }, 2000);
+      showResult(total, profile);
+    }, 2200);
   }
 
-  function saveToSheets(email, role, profile) {
-    // Non blocca il quiz se fallisce
-    fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        timestamp : new Date().toISOString(),
-        email     : email,
-        ruolo     : role,
-        profilo   : profile
-      })
-    })
-    .then(() => {
-      const msg = document.getElementById('save-msg');
-      if (msg) msg.style.display = 'block';
-    })
-    .catch(() => {
-      // silenzioso — l'utente non vede errori
+  // ─── SHOW RESULT ──────────────────────────────
+  function showResult(total, p) {
+    document.getElementById('qcard').style.display = 'none';
+    const rc = document.getElementById('rc');
+    rc.style.display = 'block';
+
+    document.getElementById('r-char').textContent    = p.char;
+    document.getElementById('r-name').textContent    = p.name;
+    document.getElementById('r-tagline').textContent = p.tagline;
+    document.getElementById('r-score').textContent   = 'Punteggio: ' + total + ' / 90';
+    document.getElementById('r-desc').textContent    = p.desc;
+    document.getElementById('r-manifesto').textContent = p.manifesto;
+    document.getElementById('r-next').textContent    = p.next;
+
+    const list = document.getElementById('r-list');
+    list.innerHTML = '';
+    p.list.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      list.appendChild(li);
     });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // ─── SAVE TO SHEETS ───────────────────────────
+  function saveData(email, role, scores, total, profile) {
+    const payload = {
+      timestamp : new Date().toISOString(),
+      email     : email,
+      ruolo     : role,
+      q3        : scores[3]  ?? '',
+      q4        : scores[4]  ?? '',
+      q5        : scores[5]  ?? '',
+      q6        : scores[6]  ?? '',
+      q7        : scores[7]  ?? '',
+      q8        : scores[8]  ?? '',
+      q9        : scores[9]  ?? '',
+      q10       : scores[10] ?? '',
+      punteggio : total,
+      profilo   : profile
+    };
+    fetch(APPS_SCRIPT_URL, {
+      method  : 'POST',
+      mode    : 'no-cors',
+      headers : { 'Content-Type': 'application/json' },
+      body    : JSON.stringify(payload)
+    }).catch(() => {});
+  }
+
+  // Enter su email
   document.getElementById('em').addEventListener('keydown', e => {
-    if (e.key === 'Enter') go2();
+    if (e.key === 'Enter') goStep(2);
   });
 </script>
 </body>
