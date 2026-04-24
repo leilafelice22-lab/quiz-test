@@ -628,7 +628,7 @@
   // ─────────────────────────────────────────────
   // CONFIGURAZIONE — incolla il tuo URL Apps Script
   // ─────────────────────────────────────────────
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/IL_TUO_URL_QUI/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKw2Lorp2l0i7S4J3M0LDxX6BzFnYjog5360C6fVk4vYuyU7Qc44SayhQ4UvFzGJlN4Q/exec';
 
   const TOTAL = 10;
   let userEmail = '';
@@ -685,9 +685,10 @@
   ];
 
   // ─── PROGRESS ─────────────────────────────────
-  function upProg(step) {
-    document.getElementById('pf').style.width = ((step - 1) / TOTAL * 100) + '%';
-    document.getElementById('pl').textContent = (step - 1) + ' / ' + TOTAL;
+  function upProg(step, completed) {
+    const done = completed !== undefined ? completed : step - 1;
+    document.getElementById('pf').style.width = (done / TOTAL * 100) + '%';
+    document.getElementById('pl').textContent = done + ' / ' + TOTAL;
   }
 
   // ─── NAVIGATION ───────────────────────────────
@@ -728,7 +729,7 @@
   function submitQ() {
     document.getElementById('s10').style.display = 'none';
     document.getElementById('sw').style.display  = 'block';
-    upProg(10);
+    upProg(10, 10);
 
     const total = Object.values(scores).reduce((a, b) => a + b, 0);
     const profile = profiles.find(p => total >= p.min && total <= p.max) || profiles[0];
