@@ -420,14 +420,14 @@
   <div class="hero">
     <span class="hero-illo">⚔️</span>
     <div class="hero-title">Marketing digitale:<br><span>che Gallo sei?</span></div>
-    <div class="hero-sub">10 domande · scopri il tuo profilo</div>
+    <div class="hero-sub">6 domande · scopri il tuo profilo</div>
   </div>
 
   <!-- PROGRESS -->
   <div class="prog-area">
     <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf" style="width:0%"></div></div>
-      <div class="prog-num" id="pl">0 / 10</div>
+      <div class="prog-num" id="pl">0 / 6</div>
     </div>
   </div>
 
@@ -436,7 +436,7 @@
 
     <!-- Q1: Email -->
     <div class="step active" id="s1">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 1 di 10</div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 1 di 6</div>
       <div class="speech"><div class="q-text">Come ti troviamo dopo la fiera? 📬</div></div>
       <label class="field-lbl" for="em">La tua email</label>
       <input class="q-input" type="email" id="em" placeholder="nome@azienda.com" autocomplete="email"/>
@@ -446,7 +446,7 @@
 
     <!-- Q2: Ruolo -->
     <div class="step" id="s2">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 2 di 10</div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 2 di 6</div>
       <div class="speech"><div class="q-text">Che ruolo hai in azienda? 🏢</div></div>
       <div class="opts" id="opts2">
         <button class="opt" onclick="pickRole(this,'CEO / Founder')"><span class="odot"><span class="odi"></span></span>CEO / Founder</button>
@@ -462,15 +462,14 @@
       </div>
     </div>
 
-    <!-- Q3: Tag gateway -->
+    <!-- Q3: Tracking coverage -->
     <div class="step" id="s3">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 3 di 10</div>
-      <div class="speech"><div class="q-text">Utilizzi il tag gateway? 🏷️</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 3 di 6</div>
+      <div class="speech"><div class="q-text">Hai visibilità completa delle conversioni cross-device (iOS, Safari, adblocker inclusi)? 📡</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,3,0)"><span class="odot"><span class="odi"></span></span>❌ No, non lo sto utilizzando</button>
-        <button class="opt" onclick="pickScore(this,3,4)"><span class="odot"><span class="odi"></span></span>✅ Sto pianificando l'implementazione </button>
-        <button class="opt" onclick="pickScore(this,3,7)"><span class="odot"><span class="odi"></span></span>✅ Lo uso per alcuni flussi</button>
-        <button class="opt" onclick="pickScore(this,3,10)"><span class="odot"><span class="odi"></span></span>✅ Lo utilizzo totalmente</button>
+        <button class="opt" onclick="pickScore(this,3,10)"><span class="odot"><span class="odi"></span></span>Sì, quasi totale (&gt;90%)</button>
+        <button class="opt" onclick="pickScore(this,3,5)"><span class="odot"><span class="odi"></span></span>Parzialmente</button>
+        <button class="opt" onclick="pickScore(this,3,0)"><span class="odot"><span class="odi"></span></span>No / non saprei</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(2)">←</button>
@@ -478,15 +477,14 @@
       </div>
     </div>
 
-    <!-- Q4: Cookie -->
+    <!-- Q4: Server-side -->
     <div class="step" id="s4">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 4 di 10</div>
-      <div class="speech"><div class="q-text">Ogni quanto scansioni i cookie del tuo sito? 🍪</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 4 di 6</div>
+      <div class="speech"><div class="q-text">Utilizzi già un setup server-side per il tracking? 🖥️</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,4,0)"><span class="odot"><span class="odi"></span></span>Mai</button>
-        <button class="opt" onclick="pickScore(this,4,2)"><span class="odot"><span class="odi"></span></span>Solo quando "qualcosa non va"</button>
-        <button class="opt" onclick="pickScore(this,4,5)"><span class="odot"><span class="odi"></span></span>Periodicamente (trimestrale/mensile)</button>
-        <button class="opt" onclick="pickScore(this,4,10)"><span class="odot"><span class="odi"></span></span>Automaticamente o su base continua</button>
+        <button class="opt" onclick="pickScore(this,4,10)"><span class="odot"><span class="odi"></span></span>Sì, già in produzione</button>
+        <button class="opt" onclick="pickScore(this,4,5)"><span class="odot"><span class="odi"></span></span>In fase di valutazione</button>
+        <button class="opt" onclick="pickScore(this,4,0)"><span class="odot"><span class="odi"></span></span>No</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(3)">←</button>
@@ -494,15 +492,14 @@
       </div>
     </div>
 
-    <!-- Q5: First Party Data -->
+    <!-- Q5: Data consistency -->
     <div class="step" id="s5">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 5 di 10</div>
-      <div class="speech"><div class="q-text">Quanto impatta l'assenza di una strategia First-Party Data sui tuoi dati? 📊</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 5 di 6</div>
+      <div class="speech"><div class="q-text">I tuoi dati sono coerenti tra analytics, piattaforme media e CRM? 🔗</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,5,0)"><span class="odot"><span class="odi"></span></span>Cos'è il first party?</button>
-        <button class="opt" onclick="pickScore(this,5,4)"><span class="odot"><span class="odi"></span></span>Non lo so</button>
-        <button class="opt" onclick="pickScore(this,5,7)"><span class="odot"><span class="odi"></span></span>Poco (≈10%)</button>
-        <button class="opt" onclick="pickScore(this,5,10)"><span class="odot"><span class="odi"></span></span>Molto (≈30%)</button>
+        <button class="opt" onclick="pickScore(this,5,10)"><span class="odot"><span class="odi"></span></span>Sì</button>
+        <button class="opt" onclick="pickScore(this,5,5)"><span class="odot"><span class="odi"></span></span>Spesso no</button>
+        <button class="opt" onclick="pickScore(this,5,0)"><span class="odot"><span class="odi"></span></span>Non lo so</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(4)">←</button>
@@ -510,15 +507,14 @@
       </div>
     </div>
 
-    <!-- Q6: Personalizzazione -->
+    <!-- Q6: First-party data -->
     <div class="step" id="s6">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 6 di 10</div>
-      <div class="speech"><div class="q-text">Personalizzi i contenuti web in base al tipo di utente? 🎯</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 6 di 6</div>
+      <div class="speech"><div class="q-text">Riesci ad attivare efficacemente le tue audience first-party (CRM, display, search, ecc.)? 🎯</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,6,0)"><span class="odot"><span class="odi"></span></span>Nessuna personalizzazione</button>
-        <button class="opt" onclick="pickScore(this,6,3)"><span class="odot"><span class="odi"></span></span>Basata solo su device o lingua</button>
-        <button class="opt" onclick="pickScore(this,6,7)"><span class="odot"><span class="odi"></span></span>Basata su comportamento/CRM</button>
-        <button class="opt" onclick="pickScore(this,6,10)"><span class="odot"><span class="odi"></span></span>Personalizzazione real-time e omnicanale</button>
+        <button class="opt" onclick="pickScore(this,6,10)"><span class="odot"><span class="odi"></span></span>Sì, regolarmente</button>
+        <button class="opt" onclick="pickScore(this,6,5)"><span class="odot"><span class="odi"></span></span>Parzialmente</button>
+        <button class="opt" onclick="pickScore(this,6,0)"><span class="odot"><span class="odi"></span></span>No</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(5)">←</button>
@@ -526,66 +522,18 @@
       </div>
     </div>
 
-    <!-- Q7: Carrello abbandonato -->
+    <!-- Q7: Impatto business -->
     <div class="step" id="s7">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 7 di 10</div>
-      <div class="speech"><div class="q-text">Cosa succede al carrello abbandonato? 🛒</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Domanda 7 di 6</div>
+      <div class="speech"><div class="q-text">Pensi di star perdendo performance (ROAS / conversioni) per limiti di tracking? 📉</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,7,0)"><span class="odot"><span class="odi"></span></span>Fa le ragnatele 🕸️</button>
-        <button class="opt" onclick="pickScore(this,7,4)"><span class="odot"><span class="odi"></span></span>Email di reminder</button>
-        <button class="opt" onclick="pickScore(this,7,8)"><span class="odot"><span class="odi"></span></span>Flussi multicanale (ads, email...)</button>
-        <button class="opt" onclick="pickScore(this,7,10)"><span class="odot"><span class="odi"></span></span>Strategie personalizzate</button>
+        <button class="opt" onclick="pickScore(this,7,10)"><span class="odot"><span class="odi"></span></span>Sì, chiaramente</button>
+        <button class="opt" onclick="pickScore(this,7,5)"><span class="odot"><span class="odi"></span></span>Forse</button>
+        <button class="opt" onclick="pickScore(this,7,0)"><span class="odot"><span class="odi"></span></span>No</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(6)">←</button>
-        <button class="btn-next" id="btn7" onclick="goStep(8)" disabled>Continua →</button>
-      </div>
-    </div>
-
-    <!-- Q8: Decisioni -->
-    <div class="step" id="s8">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 8 di 10</div>
-      <div class="speech"><div class="q-text">Le tue decisioni di marketing si basano su… 🧠</div></div>
-      <div class="opts">
-        <button class="opt" onclick="pickScore(this,8,0)"><span class="odot"><span class="odi"></span></span>Istinto</button>
-        <button class="opt" onclick="pickScore(this,8,4)"><span class="odot"><span class="odi"></span></span>Report sporadici</button>
-        <button class="opt" onclick="pickScore(this,8,7)"><span class="odot"><span class="odi"></span></span>KPI chiari e dashboard</button>
-        <button class="opt" onclick="pickScore(this,8,10)"><span class="odot"><span class="odi"></span></span>Test, esperimenti e modelli avanzati</button>
-      </div>
-      <div class="nav-row">
-        <button class="btn-back" onclick="goStep(7)">←</button>
-        <button class="btn-next" id="btn8" onclick="goStep(9)" disabled>Continua →</button>
-      </div>
-    </div>
-
-    <!-- Q9: Post-cookie -->
-    <div class="step" id="s9">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 9 di 10</div>
-      <div class="speech"><div class="q-text">Come affronti il mondo post-cookie? 🍪</div></div>
-      <div class="opts">
-        <button class="opt" onclick="pickScore(this,9,0)"><span class="odot"><span class="odi"></span></span>Fingo che non esista</button>
-        <button class="opt" onclick="pickScore(this,9,4)"><span class="odot"><span class="odi"></span></span>Sto valutando alternative</button>
-        <button class="opt" onclick="pickScore(this,9,10)"><span class="odot"><span class="odi"></span></span>First-party, server-side 🚀</button>
-      </div>
-      <div class="nav-row">
-        <button class="btn-back" onclick="goStep(8)">←</button>
-        <button class="btn-next" id="btn9" onclick="goStep(10)" disabled>Continua →</button>
-      </div>
-    </div>
-
-    <!-- Q10: Pozione segreta -->
-    <div class="step" id="s10">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 10 di 10</div>
-      <div class="speech"><div class="q-text">La tua pozione segreta nel marketing è… 🧪</div></div>
-      <div class="opts">
-        <button class="opt" onclick="pickScore(this,10,0)"><span class="odot"><span class="odi"></span></span>Fortuna 🍀</button>
-        <button class="opt" onclick="pickScore(this,10,4)"><span class="odot"><span class="odi"></span></span>Esperienza</button>
-        <button class="opt" onclick="pickScore(this,10,8)"><span class="odot"><span class="odi"></span></span>Dati + strategia</button>
-        <button class="opt" onclick="pickScore(this,10,10)"><span class="odot"><span class="odi"></span></span>First-party data ben governati</button>
-      </div>
-      <div class="nav-row">
-        <button class="btn-back" onclick="goStep(9)">←</button>
-        <button class="btn-next" id="btn10" onclick="submitQ()" disabled>Scopri chi sei →</button>
+        <button class="btn-next" id="btn7" onclick="submitQ()" disabled>Scopri chi sei →</button>
       </div>
     </div>
 
@@ -630,57 +578,57 @@
   // ─────────────────────────────────────────────
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKw2Lorp2l0i7S4J3M0LDxX6BzFnYjog5360C6fVk4vYuyU7Qc44SayhQ4UvFzGJlN4Q/exec';
 
-  const TOTAL = 10;
+  const TOTAL = 7;
   let userEmail = '';
   let userRole  = '';
-  let scores    = {}; // { stepNum: punteggio }
+  let scores    = {};
 
   // ─── PROFILI ───────────────────────────────────
   const profiles = [
     {
-      min: 0, max: 20,
+      min: 0, max: 10,
       char: '🏛️', name: 'Romano Smarrito',
-      tagline: '"Funzionava anche prima…"',
-      desc: 'Il digital marketing intorno a te sembra l\'esercito romano: rumoroso, confuso e un po\' minaccioso. Ti affidi all\'istinto e speri che gli dei siano dalla tua parte.',
-      list: ['Poco o nessun controllo sui dati', 'Tracking minimo o inesistente', 'Zero personalizzazione', 'Fortuna come strategia'],
-      manifesto: '"Funzionava anche prima…"',
-      next: 'Capire cosa sta succedendo davvero sul tuo sito. Senza dati, nessuna pozione fa effetto.'
+      tagline: '"Tracking? Gli dei provvederanno."',
+      desc: 'Il tuo tracking è come l\'esercito romano a Gerico: tanto rumore, pochi risultati. Non sai cosa succede sui tuoi canali e le decisioni le prendi a istinto — sperando che gli algoritmi facciano il resto.',
+      list: ['Nessuna visibilità cross-device', 'Setup client-side non monitorato', 'Dati inconsistenti o assenti', 'Audience first-party non attivate'],
+      manifesto: '"Tracking? Gli dei provvederanno."',
+      next: 'Inizia dal principio: un audit del tuo tracking attuale. Senza dati affidabili, ogni budget è sprecato.'
     },
     {
-      min: 21, max: 40,
-      char: '👑', name: 'Abraracourcix - Capo del villaggio',
-      tagline: '"Mi fido del mio team… più o meno."',
-      desc: 'Hai autorità, esperienza e decisionalità, ma spesso vieni sollevato sullo scudo senza sapere esattamente perché le cose funzionano.',
-      list: ['Strumenti presenti ma non governati', 'Report sporadici', 'Personalizzazione base'],
-      manifesto: '"Mi fido del mio team… più o meno."',
-      next: 'Trasformare l\'esperienza in processi e KPI chiari.'
+      min: 11, max: 20,
+      char: '👑', name: 'Abraracourcix — Capo del Villaggio',
+      tagline: '"Il mio team se ne occupa… credo."',
+      desc: 'Hai gli strumenti, ma non li governi davvero. Qualcosa funziona, qualcosa no — e spesso non sai distinguere le due cose. Sei sollevato sullo scudo, ma lo scudo balla.',
+      list: ['Tracking parziale e non validato', 'Server-side ancora da valutare', 'CRM e analytics non allineati', 'First-party data sottoutilizzati'],
+      manifesto: '"Il mio team se ne occupa… credo."',
+      next: 'Metti ordine nella tua infrastruttura dati. Inizia con una data quality review e definisci ownership chiare.'
     },
     {
-      min: 41, max: 60,
+      min: 21, max: 30,
       char: '⚔️', name: 'Asterix Stratega',
-      tagline: '"Datemi i dati giusti e  vinco la battaglia."',
-      desc: 'Piccolo, ma temibile. Sai orientarti tra dati, strumenti e decisioni; non sei il più forte, ma usi la testa meglio degli altri.',
-      list: ['KPI e dashboard', 'Prime strategie first-party', 'Recupero carrello attivo', 'Buona personalizzazione'],
+      tagline: '"Datemi i dati giusti e vinco la battaglia."',
+      desc: 'Piccolo ma temibile. Hai consapevolezza dei tuoi limiti e stai costruendo una strategia. Non sei ancora al massimo, ma usi la testa meglio di chi ha tre volte il tuo budget.',
+      list: ['Tracking cross-device parzialmente coperto', 'Server-side in valutazione', 'Prime attivazioni first-party attive', 'Buona consapevolezza dei gap'],
       manifesto: '"Datemi i dati giusti e vinco la battaglia."',
-      next: 'Fare un salto di maturità tecnica: automazioni, server-side, controllo totale.'
+      next: 'È il momento di passare al server-side. Un setup solido ti darà il vantaggio competitivo che cerchi.'
     },
     {
-      min: 61, max: 75,
+      min: 31, max: 40,
       char: '🪨', name: 'Obelix Data-Driven',
       tagline: '"È semplice: lo vedo dai dati."',
-      desc: 'Sei caduto nel calderone dei dati da piccolo. Le decisioni le prendi su basi solide e rompi i silos senza accorgertene.',
-      list: ['First-party data attivi', 'Personalizzazione', 'Flussi multicanale', 'Visione post-cookie chiara'],
+      desc: 'Sei caduto nel calderone del tracking da piccolo. Le tue decisioni sono basate su dati coerenti, le tue audience sono attive e sai già dove stai perdendo performance — e come recuperarle.',
+      list: ['Alta copertura cross-device', 'Server-side in produzione o quasi', 'CRM e media ben sincronizzati', 'Audience first-party regolarmente attivate'],
       manifesto: '"È semplice: lo vedo dai dati."',
-      next: 'Rendere tutto scalabile e sostenibile, senza perdere controllo.'
+      next: 'Scala ciò che funziona. Automatizza la data quality e porta il tuo stack al livello successivo.'
     },
     {
-      min: 76, max: 90,
+      min: 41, max: 50,
       char: '🧙', name: 'Panoramix — Maestro della Pozione Digitale',
       tagline: '"La pozione funziona solo se conosci ogni ingrediente."',
-      desc: 'Il saggio del villaggio. Governi dati, consenso e tecnologia con equilibrio. Sai che la vera forza è la governance.',
-      list: ['Server-side & tag gateway', 'First-party data ben governati', 'Personalizzazione real-time', 'Test ed esperimenti continui'],
+      desc: 'Il saggio del villaggio digitale. Hai visibilità totale, tracking server-side in produzione, dati coerenti su tutti i canali e audience first-party pienamente attivate. Sai che la vera forza è la governance.',
+      list: ['Copertura cross-device >90%', 'Server-side tracking operativo', 'Dati coerenti tra analytics, media e CRM', 'First-party data attivati su tutti i canali'],
       manifesto: '"La pozione funziona solo se conosci ogni ingrediente."',
-      next: 'Condividere il metodo e guidare altri verso la maturità digitale.'
+      next: 'Condividi il metodo. La tua maturità è un vantaggio competitivo — ora è il momento di scalarlo.'
     }
   ];
 
@@ -727,9 +675,9 @@
 
   // ─── SUBMIT ───────────────────────────────────
   function submitQ() {
-    document.getElementById('s10').style.display = 'none';
+    document.getElementById('s7').style.display = 'none';
     document.getElementById('sw').style.display  = 'block';
-    upProg(10, 10);
+    upProg(7, 7);
 
     const total = Object.values(scores).reduce((a, b) => a + b, 0);
     const profile = profiles.find(p => total >= p.min && total <= p.max) || profiles[0];
@@ -750,7 +698,7 @@
     document.getElementById('r-char').textContent    = p.char;
     document.getElementById('r-name').textContent    = p.name;
     document.getElementById('r-tagline').textContent = p.tagline;
-    document.getElementById('r-score').textContent   = 'Punteggio: ' + total + ' / 90';
+    document.getElementById('r-score').textContent   = 'Punteggio: ' + total + ' / 50';
     document.getElementById('r-desc').textContent    = p.desc;
     document.getElementById('r-manifesto').textContent = p.manifesto;
     document.getElementById('r-next').textContent    = p.next;
@@ -777,9 +725,6 @@
       q5        : scores[5]  ?? '',
       q6        : scores[6]  ?? '',
       q7        : scores[7]  ?? '',
-      q8        : scores[8]  ?? '',
-      q9        : scores[9]  ?? '',
-      q10       : scores[10] ?? '',
       punteggio : total,
       profilo   : profile
     };
