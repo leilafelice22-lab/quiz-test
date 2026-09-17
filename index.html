@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marketing digitale: che Gallo sei?</title>
+  <title>Digital Marketing: Which League Are You In?</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -295,16 +295,6 @@
       padding: 1.5rem;
       display: none;
     }
-    .r-char {
-      font-size: 72px;
-      display: block;
-      text-align: center;
-      animation: float 2.5s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
-    }
     .r-badge {
       display: block;
       text-align: center;
@@ -321,7 +311,7 @@
       width: fit-content;
     }
     .r-name {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
       color: #1a1a2e;
       margin-bottom: .2rem;
@@ -418,16 +408,16 @@
 
   <!-- HERO -->
   <div class="hero">
-    <span class="hero-illo">⚔️</span>
-    <div class="hero-title">Marketing digitale:<br><span>che Gallo sei?</span></div>
-    <div class="hero-sub">6 domande · scopri il tuo profilo</div>
+    <span class="hero-illo">⚽</span>
+    <div class="hero-title">Digital Marketing:<br><span>Which League Are You In?</span></div>
+    <div class="hero-sub">7 questions · find out your profile</div>
   </div>
 
   <!-- PROGRESS -->
   <div class="prog-area">
     <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf" style="width:0%"></div></div>
-      <div class="prog-num" id="pl">0 / 6</div>
+      <div class="prog-num" id="pl">0 / 7</div>
     </div>
   </div>
 
@@ -436,138 +426,138 @@
 
     <!-- Q1: Tracking coverage -->
     <div class="step active" id="s1">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 1 di 7</div>
-      <div class="speech"><div class="q-text">Hai visibilità completa delle conversioni cross-device (iOS, Safari, adblocker inclusi)? 📡</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Question 1 of 7</div>
+      <div class="speech"><div class="q-text">Do you have full visibility over cross-device conversions (iOS, Safari, ad blockers included)? 📡</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,1,10)"><span class="odot"><span class="odi"></span></span>Sì, quasi totale (&gt;90%)</button>
-        <button class="opt" onclick="pickScore(this,1,5)"><span class="odot"><span class="odi"></span></span>Parzialmente</button>
-        <button class="opt" onclick="pickScore(this,1,0)"><span class="odot"><span class="odi"></span></span>No / non saprei</button>
+        <button class="opt" onclick="pickScore(this,1,10)"><span class="odot"><span class="odi"></span></span>Yes, almost complete (&gt;90%)</button>
+        <button class="opt" onclick="pickScore(this,1,5)"><span class="odot"><span class="odi"></span></span>Partially</button>
+        <button class="opt" onclick="pickScore(this,1,0)"><span class="odot"><span class="odi"></span></span>No / not sure</button>
       </div>
       <div class="nav-row">
-        <button class="btn-next" id="btn1" onclick="goStep(2)" disabled style="width:100%">Continua →</button>
+        <button class="btn-next" id="btn1" onclick="goStep(2)" disabled style="width:100%">Continue →</button>
       </div>
     </div>
 
     <!-- Q2: Server-side -->
     <div class="step" id="s2">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 2 di 7</div>
-      <div class="speech"><div class="q-text">Utilizzi già un setup server-side per il tracking? 🖥️</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Question 2 of 7</div>
+      <div class="speech"><div class="q-text">Are you already using a server-side setup for tracking? 🖥️</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,2,10)"><span class="odot"><span class="odi"></span></span>Sì, già in produzione</button>
-        <button class="opt" onclick="pickScore(this,2,5)"><span class="odot"><span class="odi"></span></span>In fase di valutazione</button>
+        <button class="opt" onclick="pickScore(this,2,10)"><span class="odot"><span class="odi"></span></span>Yes, already in production</button>
+        <button class="opt" onclick="pickScore(this,2,5)"><span class="odot"><span class="odi"></span></span>Currently evaluating it</button>
         <button class="opt" onclick="pickScore(this,2,0)"><span class="odot"><span class="odi"></span></span>No</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(1)">←</button>
-        <button class="btn-next" id="btn2" onclick="goStep(3)" disabled>Continua →</button>
+        <button class="btn-next" id="btn2" onclick="goStep(3)" disabled>Continue →</button>
       </div>
     </div>
 
     <!-- Q3: Data consistency -->
     <div class="step" id="s3">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 3 di 7</div>
-      <div class="speech"><div class="q-text">I tuoi dati sono coerenti tra analytics, piattaforme media e CRM? 🔗</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Question 3 of 7</div>
+      <div class="speech"><div class="q-text">Is your data consistent across analytics, media platforms and CRM? 🔗</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,3,10)"><span class="odot"><span class="odi"></span></span>Sì</button>
-        <button class="opt" onclick="pickScore(this,3,5)"><span class="odot"><span class="odi"></span></span>Spesso no</button>
-        <button class="opt" onclick="pickScore(this,3,0)"><span class="odot"><span class="odi"></span></span>Non lo so</button>
+        <button class="opt" onclick="pickScore(this,3,10)"><span class="odot"><span class="odi"></span></span>Yes</button>
+        <button class="opt" onclick="pickScore(this,3,5)"><span class="odot"><span class="odi"></span></span>Often not</button>
+        <button class="opt" onclick="pickScore(this,3,0)"><span class="odot"><span class="odi"></span></span>I don't know</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(2)">←</button>
-        <button class="btn-next" id="btn3" onclick="goStep(4)" disabled>Continua →</button>
+        <button class="btn-next" id="btn3" onclick="goStep(4)" disabled>Continue →</button>
       </div>
     </div>
 
     <!-- Q4: First-party data -->
     <div class="step" id="s4">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 4 di 7</div>
-      <div class="speech"><div class="q-text">Riesci ad attivare efficacemente le tue audience first-party (CRM, display, search, ecc.)? 🎯</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Question 4 of 7</div>
+      <div class="speech"><div class="q-text">Can you effectively activate your first-party audiences (CRM, display, search, etc.)? 🎯</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,4,10)"><span class="odot"><span class="odi"></span></span>Sì, regolarmente</button>
-        <button class="opt" onclick="pickScore(this,4,5)"><span class="odot"><span class="odi"></span></span>Parzialmente</button>
+        <button class="opt" onclick="pickScore(this,4,10)"><span class="odot"><span class="odi"></span></span>Yes, regularly</button>
+        <button class="opt" onclick="pickScore(this,4,5)"><span class="odot"><span class="odi"></span></span>Partially</button>
         <button class="opt" onclick="pickScore(this,4,0)"><span class="odot"><span class="odi"></span></span>No</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(3)">←</button>
-        <button class="btn-next" id="btn4" onclick="goStep(5)" disabled>Continua →</button>
+        <button class="btn-next" id="btn4" onclick="goStep(5)" disabled>Continue →</button>
       </div>
     </div>
 
-    <!-- Q5: Impatto business -->
+    <!-- Q5: Business impact -->
     <div class="step" id="s5">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 5 di 7</div>
-      <div class="speech"><div class="q-text">Pensi di star perdendo performance (ROAS / conversioni) per limiti di tracking? 📉</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Question 5 of 7</div>
+      <div class="speech"><div class="q-text">Do you think you're losing performance (ROAS / conversions) because of tracking limitations? 📉</div></div>
       <div class="opts">
-        <button class="opt" onclick="pickScore(this,5,10)"><span class="odot"><span class="odi"></span></span>Sì, chiaramente</button>
-        <button class="opt" onclick="pickScore(this,5,5)"><span class="odot"><span class="odi"></span></span>Forse</button>
+        <button class="opt" onclick="pickScore(this,5,10)"><span class="odot"><span class="odi"></span></span>Yes, clearly</button>
+        <button class="opt" onclick="pickScore(this,5,5)"><span class="odot"><span class="odi"></span></span>Maybe</button>
         <button class="opt" onclick="pickScore(this,5,0)"><span class="odot"><span class="odi"></span></span>No</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(4)">←</button>
-        <button class="btn-next" id="btn5" onclick="goStep(6)" disabled>Continua →</button>
+        <button class="btn-next" id="btn5" onclick="goStep(6)" disabled>Continue →</button>
       </div>
     </div>
 
     <!-- Q6: Email -->
     <div class="step" id="s6">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 6 di 7</div>
-      <div class="speech"><div class="q-text">Come ti troviamo dopo la fiera? 📬</div></div>
-      <label class="field-lbl" for="em">La tua email</label>
-      <input class="q-input" type="email" id="em" placeholder="nome@azienda.com" autocomplete="email"/>
-      <div class="err" id="em-err">Inserisci un'email valida!</div>
+      <div class="step-pill"><div class="step-dot"></div>Question 6 of 7</div>
+      <div class="speech"><div class="q-text">How do we reach you after the event? 📬</div></div>
+      <label class="field-lbl" for="em">Your email</label>
+      <input class="q-input" type="email" id="em" placeholder="name@company.com" autocomplete="email"/>
+      <div class="err" id="em-err">Please enter a valid email!</div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(5)">←</button>
-        <button class="btn-next" id="btn6" onclick="goStep(7)">Continua →</button>
+        <button class="btn-next" id="btn6" onclick="goStep(7)">Continue →</button>
       </div>
     </div>
 
-    <!-- Q7: Ruolo -->
+    <!-- Q7: Role -->
     <div class="step" id="s7">
-      <div class="step-pill"><div class="step-dot"></div>Domanda 7 di 7</div>
-      <div class="speech"><div class="q-text">Che ruolo hai in azienda? 🏢</div></div>
+      <div class="step-pill"><div class="step-dot"></div>Question 7 of 7</div>
+      <div class="speech"><div class="q-text">What's your role at your company? 🏢</div></div>
       <div class="opts" id="opts7">
         <button class="opt" onclick="pickRole(this,'CEO / Founder')"><span class="odot"><span class="odi"></span></span>CEO / Founder</button>
-        <button class="opt" onclick="pickRole(this,'Marketing & Comunicazione')"><span class="odot"><span class="odi"></span></span>Marketing & Comunicazione</button>
-        <button class="opt" onclick="pickRole(this,'Sales & Business Dev')"><span class="odot"><span class="odi"></span></span>Sales & Business Dev</button>
+        <button class="opt" onclick="pickRole(this,'Marketing & Communications')"><span class="odot"><span class="odi"></span></span>Marketing & Communications</button>
+        <button class="opt" onclick="pickRole(this,'Sales & Business Development')"><span class="odot"><span class="odi"></span></span>Sales & Business Development</button>
         <button class="opt" onclick="pickRole(this,'Operations & Finance')"><span class="odot"><span class="odi"></span></span>Operations & Finance</button>
-        <button class="opt" onclick="pickRole(this,'Tech & Prodotto')"><span class="odot"><span class="odi"></span></span>Tech & Prodotto</button>
-        <button class="opt" onclick="pickRole(this,'Altro')"><span class="odot"><span class="odi"></span></span>Altro</button>
+        <button class="opt" onclick="pickRole(this,'Tech & Product')"><span class="odot"><span class="odi"></span></span>Tech & Product</button>
+        <button class="opt" onclick="pickRole(this,'Other')"><span class="odot"><span class="odi"></span></span>Other</button>
       </div>
       <div class="nav-row">
         <button class="btn-back" onclick="goStep(6)">←</button>
-        <button class="btn-next" id="btn7" onclick="submitQ()" disabled>Scopri chi sei →</button>
+        <button class="btn-next" id="btn7" onclick="submitQ()" disabled>Find out who you are →</button>
       </div>
     </div>
 
     <!-- Loading -->
     <div class="spin-wrap" id="sw">
-      <span class="cauldron">🪄</span>
-      <div class="spin-txt">La pozione è in preparazione...</div>
-      <div class="spin-sub">Panoramix sta analizzando i tuoi dati</div>
+      <span class="cauldron">🏆</span>
+      <div class="spin-txt">Calculating your league...</div>
+      <div class="spin-sub">Reviewing your matchday stats</div>
     </div>
 
   </div>
 
   <!-- RESULT -->
   <div class="rcard" id="rc">
-    <img id="r-img" src="" alt="personaggio" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto .5rem;animation:float 2.5s ease-in-out infinite;"/>
-    <div class="r-badge">Il tuo profilo è</div>
+    <img id="r-img" src="" alt="trophy" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto .5rem;"/>
+    <div class="r-badge">Your profile is</div>
     <div class="r-name" id="r-name">—</div>
     <div class="r-tagline" id="r-tagline">—</div>
     <div class="r-score" id="r-score"></div>
 
     <div class="r-divider"><div class="r-divider-line"></div><div class="r-dot"></div><div class="r-divider-line"></div></div>
 
-    <div class="r-section-title">Chi sei</div>
+    <div class="r-section-title">Who you are</div>
     <div class="r-desc" id="r-desc">—</div>
 
-    <div class="r-section-title">Come lavori</div>
+    <div class="r-section-title">How you play</div>
     <ul class="r-list" id="r-list"></ul>
 
     <div class="r-manifesto" id="r-manifesto">—</div>
 
     <div class="r-next">
-      <strong>🚀 Prossimo step</strong>
+      <strong>🚀 Next step</strong>
       <span id="r-next">—</span>
     </div>
   </div>
@@ -576,7 +566,7 @@
 
 <script>
   // ─────────────────────────────────────────────
-  // CONFIGURAZIONE — incolla il tuo URL Apps Script
+  // CONFIG — paste your Apps Script URL here
   // ─────────────────────────────────────────────
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKw2Lorp2l0i7S4J3M0LDxX6BzFnYjog5360C6fVk4vYuyU7Qc44SayhQ4UvFzGJlN4Q/exec';
 
@@ -585,52 +575,55 @@
   let userRole  = '';
   let scores    = {};
 
-  // ─── PROFILI ───────────────────────────────────
+  // ─── PROFILES (5 tiers, lowest to highest score) ──
+  // Images: point these paths to wherever you host the logos.
+  // If you use GitHub Pages, put them in an /images folder in
+  // your repo and use a relative path like "images/xxx.png".
   const profiles = [
     {
       min: 0, max: 10,
-      img: 'romano.png', name: 'Romano Smarrito',
-      tagline: '"Tracking? Gli dei provvederanno."',
-      desc: 'Il tuo tracking è come l\'esercito romano a Gerico: tanto rumore, pochi risultati. Non sai cosa succede sui tuoi canali e le decisioni le prendi a istinto — sperando che gli algoritmi facciano il resto.',
-      list: ['Nessuna visibilità cross-device', 'Setup client-side non monitorato', 'Dati inconsistenti o assenti', 'Audience first-party non attivate'],
-      manifesto: '"Tracking? Gli dei provvederanno."',
-      next: 'Inizia dal principio: un audit del tuo tracking attuale. Senza dati affidabili, ogni budget è sprecato.'
+      img: 'images/local-cup.svg', name: 'Local Amateur League',
+      tagline: '"Tracking? Someone will figure it out eventually."',
+      desc: 'Your tracking setup is like a Sunday league team: lots of effort, not much to show for it. You don\'t really know what\'s happening across your channels, and decisions get made on gut feeling — hoping the algorithms sort it out.',
+      list: ['No cross-device visibility', 'Client-side setup, unmonitored', 'Inconsistent or missing data', 'First-party audiences not activated'],
+      manifesto: '"Tracking? Someone will figure it out eventually."',
+      next: 'Start from the basics: run an audit of your current tracking. Without reliable data, every euro of budget is a gamble.'
     },
     {
       min: 11, max: 20,
-      img: 'abraracourcix.png', name: 'Abraracourcix — Capo del Villaggio',
-      tagline: '"Il mio team se ne occupa… credo."',
-      desc: 'Hai gli strumenti, ma non li governi davvero. Qualcosa funziona, qualcosa no — e spesso non sai distinguere le due cose. Sei sollevato sullo scudo, ma lo scudo balla.',
-      list: ['Tracking parziale e non validato', 'Server-side ancora da valutare', 'CRM e analytics non allineati', 'First-party data sottoutilizzati'],
-      manifesto: '"Il mio team se ne occupa… credo."',
-      next: 'Metti ordine nella tua infrastruttura dati. Inizia con una data quality review e definisci ownership chiare.'
+      img: 'images/second-division.png', name: '2. Bundesliga Prospect',
+      tagline: '"My team\'s handling it… I think."',
+      desc: 'You\'ve got the tools, but you\'re not really in control of them yet. Some things work, some don\'t, and you often can\'t tell which is which. You\'re on the bench most weeks, but at least you\'re on the roster.',
+      list: ['Partial, unvalidated tracking', 'Server-side still under evaluation', 'CRM and analytics not aligned', 'First-party data underused'],
+      manifesto: '"My team\'s handling it… I think."',
+      next: 'Get your data infrastructure in order. Start with a data quality review and assign clear ownership.'
     },
     {
       min: 21, max: 30,
-      img: 'asterix.png', name: 'Asterix Stratega',
-      tagline: '"Datemi i dati giusti e vinco la battaglia."',
-      desc: 'Piccolo ma temibile. Hai consapevolezza dei tuoi limiti e stai costruendo una strategia. Non sei ancora al massimo, ma usi la testa meglio di chi ha tre volte il tuo budget.',
-      list: ['Tracking cross-device parzialmente coperto', 'Server-side in valutazione', 'Prime attivazioni first-party attive', 'Buona consapevolezza dei gap'],
-      manifesto: '"Datemi i dati giusti e vinco la battaglia."',
-      next: 'È il momento di passare al server-side. Un setup solido ti darà il vantaggio competitivo che cerchi.'
+      img: 'images/bundes.png', name: 'Bundesliga Starter',
+      tagline: '"Give me clean data and I\'ll win the match."',
+      desc: 'Solid and dependable. You\'re aware of your gaps and actively building a strategy around them. Not at the top yet, but you\'re playing smarter than teams with three times your budget.',
+      list: ['Cross-device tracking partially covered', 'Server-side under active evaluation', 'First activations of first-party data', 'Good awareness of your own gaps'],
+      manifesto: '"Give me clean data and I\'ll win the match."',
+      next: 'Time to move to server-side tracking. A solid setup will give you the edge you\'re looking for.'
     },
     {
       min: 31, max: 40,
-      img: 'obelix.png', name: 'Obelix Data-Driven',
-      tagline: '"È semplice: lo vedo dai dati."',
-      desc: 'Sei caduto nel calderone del tracking da piccolo. Le tue decisioni sono basate su dati coerenti, le tue audience sono attive e sai già dove stai perdendo performance — e come recuperarle.',
-      list: ['Alta copertura cross-device', 'Server-side in produzione o quasi', 'CRM e media ben sincronizzati', 'Audience first-party regolarmente attivate'],
-      manifesto: '"È semplice: lo vedo dai dati."',
-      next: 'Scala ciò che funziona. Automatizza la data quality e porta il tuo stack al livello successivo.'
+      img: 'images/champions.png', name: 'Champions League Star',
+      tagline: '"It\'s simple, the data tells me everything."',
+      desc: 'You\'ve been playing at this level for a while now. Your decisions are backed by consistent data, your audiences are active, and you already know exactly where you\'re losing performance — and how to fix it.',
+      list: ['High cross-device coverage', 'Server-side tracking live or nearly live', 'CRM and media well synchronized', 'First-party audiences regularly activated'],
+      manifesto: '"It\'s simple, the data tells me everything."',
+      next: 'Scale what\'s working. Automate your data quality checks and push your stack to the next level.'
     },
     {
       min: 41, max: 50,
-      img: 'panoramix.png', name: 'Panoramix — Maestro della Pozione Digitale',
-      tagline: '"La pozione funziona solo se conosci ogni ingrediente."',
-      desc: 'Il saggio del villaggio digitale. Hai visibilità totale, tracking server-side in produzione, dati coerenti su tutti i canali e audience first-party pienamente attivate. Sai che la vera forza è la governance.',
-      list: ['Copertura cross-device >90%', 'Server-side tracking operativo', 'Dati coerenti tra analytics, media e CRM', 'First-party data attivati su tutti i canali'],
-      manifesto: '"La pozione funziona solo se conosci ogni ingrediente."',
-      next: 'Condividi il metodo. La tua maturità è un vantaggio competitivo — ora è il momento di scalarlo.'
+      img: 'images/fifa.png', name: 'World Champion',
+      tagline: '"The trophy only counts if you know how you won it."',
+      desc: 'The best in the game. Full visibility, server-side tracking in production, consistent data across every channel, and first-party audiences fully activated. You know the real edge is governance.',
+      list: ['Cross-device coverage above 90%', 'Server-side tracking fully operational', 'Consistent data across analytics, media and CRM', 'First-party data activated on every channel'],
+      manifesto: '"The trophy only counts if you know how you won it."',
+      next: 'Share the method. Your maturity is a competitive advantage, now it\'s time to scale it.'
     }
   ];
 
@@ -700,7 +693,7 @@
     document.getElementById('r-img').alt            = p.name;
     document.getElementById('r-name').textContent    = p.name;
     document.getElementById('r-tagline').textContent = p.tagline;
-    document.getElementById('r-score').textContent   = 'Punteggio: ' + total + ' / 50';
+    document.getElementById('r-score').textContent   = 'Score: ' + total + ' / 50';
     document.getElementById('r-desc').textContent    = p.desc;
     document.getElementById('r-manifesto').textContent = p.manifesto;
     document.getElementById('r-next').textContent    = p.next;
@@ -716,19 +709,19 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // ─── SAVE TO SHEETS ───────────────────────────
+  // ─── SAVE TO GOOGLE SHEETS ────────────────────
   function saveData(email, role, scores, total, profile) {
     const payload = {
       timestamp : new Date().toISOString(),
       email     : email,
-      ruolo     : role,
+      role      : role,
       q1        : scores[1] ?? '',
       q2        : scores[2] ?? '',
       q3        : scores[3] ?? '',
       q4        : scores[4] ?? '',
       q5        : scores[5] ?? '',
-      punteggio : total,
-      profilo   : profile
+      score     : total,
+      profile   : profile
     };
     fetch(APPS_SCRIPT_URL, {
       method  : 'POST',
